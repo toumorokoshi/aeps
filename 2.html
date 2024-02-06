@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en-US" class="glue-flexbox">
+  <head>
+    <title>AEP-2: AEP Numbering and Organization</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500|Product+Sans:400&amp;lang=en" rel="stylesheet"></link>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="//www.gstatic.com/glue/v22_1/glue.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=fb57c85e">
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css?v=fb57c85e">
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="//www.gstatic.com/glue/latest/glue-detect.min.js"></script>
+    <script type="text/javascript">
+      $('html').css('visibility', 'hidden');
+      $.when($.ready).then(() => {
+        $('html').css('visibility', 'visible');
+      });
+    </script>
+    <script type="text/javascript" src="/assets/js/global.js?v=fb57c85e"></script>
+    
+<script type="text/javascript" src="/assets/js/syntax.js"></script>
+<script type="text/javascript" src="/assets/js/graphviz/viz.js?v=fb57c85e"></script>
+<script type="text/javascript" src="/assets/js/graphviz/lite.render.js?v=fb57c85e"></script>
+<script type="text/javascript" src="/assets/js/aip/aip-graphviz.js?v=fb57c85e"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NSXMVSDN');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSXMVSDN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <!-- prettier-ignore -->
+<header class="glue-header glue-header--single">
+  <div class="glue-header__bar glue-header__bar--desktop glue-header__drawer">
+    <div class="glue-header__tier">
+      <!-- LOCK up-->
+      <div class="glue-header__container">
+        <div class="glue-header__lock-up">
+          <div class="glue-header__logo">
+            <a class="glue-header__logo-link" href="/" title="Google">
+              <div class="glue-header__logo-container">
+                <svg role="img" aria-hidden="true" class="glue-header__logo-svg">
+                <!--<use xlink:href="/assets/images/glue-icons.svg#google-color-logo"></use>-->
+                </svg>
+              </div>
+              <p class="glue-header__logo--product">AEPs</p>
+            </a>
+          </div>
+          <a href="#page-content" class="glue-header__skip-content">
+            <p class="glue-header__skip-content-text">Jump to Content</p>
+          </a>
+        </div>
+      </div>
+      <!-- LINK BAR-->
+      <div class="glue-header__container glue-header__container--flex-auto">
+        <nav class="glue-header__link-bar">
+          <ul id="list-1" class="glue-header__list">
+            
+              
+                <li class="glue-header__item">
+                  <a class="glue-header__link" href="/general" aria-level="1">Browse AEPs</a>
+                </li>
+              
+            
+              
+                <li class="glue-header__item">
+                  <a class="glue-header__link" href="/contributing" aria-level="1">Contributing</a>
+                </li>
+              
+            
+          </ul>
+        </nav>
+      </div>
+      <!-- CTA-->
+      <div class="glue-header__container glue-header__container--cta">
+        <div class="glue-header__cta">
+        <div class="glue-sitesearch">
+          <form method="GET" action="/search">
+          <label for="q">Search this site</label>
+          <input class="glue-sitesearch__input" type="text" name="q" id="q"
+            placeholder="Search AEPs">
+          <button type="submit" class="glue-button glue-sitesearch__submit" title="Submit">
+            <svg role="img" class="glue-icon glue-icon--24px">
+            <use xlink:href="/assets/images/glue-icons.svg#search"></use>
+            </svg>
+          </button>
+          </form>
+        </div>
+        <a href="https://github.com/aep-dev/aep.dev" target="_blank" class="glue-button glue-button--high-emphasis">
+          <img src="/assets/images/github.png" class="github-logo">
+          View on GitHub
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile header placeholder -->
+  <div class="glue-header__bar glue-header__bar--mobile">
+    <div class="glue-header__tier">
+      <!-- LOCK up-->
+      <div class="glue-header__container">
+        <div class="glue-header__lock-up">
+          <div class="glue-header__hamburger glue-header__hamburger--first-tier">
+            <div class="glue-header__hamburger-wrapper">
+              <button type="button" class="glue-header__drawer-toggle-btn"
+                aria-controls="drawer" aria-expanded="false" aria-label="Open the navigation drawer">
+                <svg role="img" class="glue-icon glue-icon--24px"><use xlink:href="/assets/images/glue-icons.svg#menu"></use></svg>
+              </button>
+            </div>
+          </div>
+          <div class="glue-header__logo">
+            <a class="glue-header__logo-link" href="/" title="Google">
+              <div class="glue-header__logo-container">
+                <svg role="img" aria-hidden="true" class="glue-header__logo-svg">
+                  <!--<use xlink:href="/assets/images/glue-icons.svg#google-color-logo"></use>-->
+                </svg>
+              </div>
+              <p class="glue-header__logo--product">AEPs</p>
+            </a>
+          </div>
+          <!-- SKIP -->
+          <a href="#page-content" class="glue-header__skip-content">
+            <p class="glue-header__skip-content-text">Jump to Content</p>
+          </a>
+        </div>
+      </div>
+      <!-- CTA -->
+      <div class="glue-header__container">
+        <div class="glue-header__cta">
+        <a href="https://github.com/aep-dev/aep.dev" class="glue-button glue-button--high-emphasis">
+          <img src="/assets/images/github.png" class="github-logo">
+          View on GitHub
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="glue-header__drawer-backdrop"></div>
+</header>
+    <div class="glue-page">
+      
+      <main role="main" id="page-content">
+        
+<nav id="aep-nav" class="docs-component-nav">
+  <ul class="nav-list">
+    <li class="nav-item nav-item-header">AEPs by Scope</li>
+    <li class="nav-item">
+      <a href="/general">General</a>
+    </li>
+    <li class="nav-item nav-item-header">AEPs</li>
+    <li class="nav-item"><b>Meta</b></li>
+      <li class="nav-item">
+          <a href="/1">
+            <span class="aep-id">1</span>
+            AEP Purpose and Guidelines
+          </a>
+        </li>
+      <li class="nav-item nav-item-active">
+          <a href="/2">
+            <span class="aep-id">2</span>
+            AEP Numbering and Organization
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/8">
+            <span class="aep-id">8</span>
+            AIP Style guide
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/9">
+            <span class="aep-id">9</span>
+            Glossary
+          </a>
+        </li>
+      <li class="nav-item"><b>General</b></li>
+      <li class="nav-item">
+          <a href="/3">
+            <span class="aep-id">3</span>
+            Glossary
+          </a>
+        </li>
+      <li class="nav-item"><b>Resources</b></li>
+      <li class="nav-item">
+          <a href="/122">
+            <span class="aep-id">122</span>
+            Resource paths
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/126">
+            <span class="aep-id">126</span>
+            Enumerations
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/4">
+            <span class="aep-id">4</span>
+            Resource types
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/121">
+            <span class="aep-id">121</span>
+            Resource-oriented design
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/123">
+            <span class="aep-id">123</span>
+            Resource types
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/124">
+            <span class="aep-id">124</span>
+            Resource association
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/159">
+            <span class="aep-id">159</span>
+            Reading across collections
+          </a>
+        </li>
+      <li class="nav-item"><b>Standard Methods</b></li>
+      <li class="nav-item">
+          <a href="/131">
+            <span class="aep-id">131</span>
+            GET for individual resources
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/151">
+            <span class="aep-id">151</span>
+            Long-running requests
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/136">
+            <span class="aep-id">136</span>
+            Custom operations
+          </a>
+        </li>
+      <li class="nav-item"><b>Fields</b></li>
+      <li class="nav-item">
+          <a href="/141">
+            <span class="aep-id">141</span>
+            Quantities
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/142">
+            <span class="aep-id">142</span>
+            Time and duration
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/144">
+            <span class="aep-id">144</span>
+            Array fields
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/145">
+            <span class="aep-id">145</span>
+            Ranges
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/140">
+            <span class="aep-id">140</span>
+            Field names
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/146">
+            <span class="aep-id">146</span>
+            Generic fields
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/148">
+            <span class="aep-id">148</span>
+            Standard fields
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/203">
+            <span class="aep-id">203</span>
+            Field behavior documentation
+          </a>
+        </li>
+      <li class="nav-item"><b>Operations</b></li>
+      <li class="nav-item">
+          <a href="/132">
+            <span class="aep-id">132</span>
+            GET for collections
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/154">
+            <span class="aep-id">154</span>
+            Resource freshness validation
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/158">
+            <span class="aep-id">158</span>
+            Pagination
+          </a>
+        </li>
+      <li class="nav-item"><b>Design Patterns</b></li>
+      <li class="nav-item">
+          <a href="/164">
+            <span class="aep-id">164</span>
+            Soft delete
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/210">
+            <span class="aep-id">210</span>
+            Unicode
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/211">
+            <span class="aep-id">211</span>
+            Authorization checks
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/157">
+            <span class="aep-id">157</span>
+            Partial responses
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/160">
+            <span class="aep-id">160</span>
+            Filtering
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/161">
+            <span class="aep-id">161</span>
+            Field masks
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/162">
+            <span class="aep-id">162</span>
+            Resource Revisions
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/214">
+            <span class="aep-id">214</span>
+            Resource expiration
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/216">
+            <span class="aep-id">216</span>
+            States
+          </a>
+        </li>
+      <li class="nav-item">
+          <a href="/217">
+            <span class="aep-id">217</span>
+            Unreachable resources
+          </a>
+        </li>
+      </ul>
+</nav>
+<section id="jump-content">
+          
+<aside id="aep-sidebar" class="docs-component-sidebar">
+  <table id="aep-summary">
+    <tr><th colspan="2">AEP Numbering and Organization</th></tr>
+    <tr><td>Slug</td><td>numbering</td></tr>
+    <tr><td>Number</td><td>2</td></tr>
+    <tr><td>Permalink</td><td><a href="https://aep.dev/2">aep.dev/2</a></td></tr>
+    <tr><td>State</td><td>Approved</td></tr>
+    <tr><td>Created</td><td>2023-10-25</td></tr>
+    <tr><td>Updated</td><td>2023-10-25</td></tr>
+  </table>
+
+  <section id="aep-toc" class="docs-component-sidebar-toc">
+    <div class="toc"><span class="toctitle">Contents</span><ul>
+<li><a href="#aep-numbers">AEP Numbers</a><ul>
+<li><a href="#core-aeps">Core AEPs</a></li>
+<li><a href="#organization-specific-aeps">Organization-specific AEPs</a></li>
+</ul>
+</li>
+<li><a href="#aep-categories">AEP Categories</a></li>
+<li><a href="#aep-slugs">AEP Slugs</a></li>
+<li><a href="#rationale">Rationale</a><ul>
+<li><a href="#why-aep-slugs">Why AEP Slugs</a></li>
+<li><a href="#why-aep-categories">Why AEP Categories</a></li>
+<li><a href="#why-organization-specific-aeps">Why Organization-specific AEPs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+  </section>
+
+  <section class="docs-component-sidebar-actions">
+    <ul>
+      <li><a href="https://github.com/aep-dev/aep.dev/issues/">File Bug</a></li>
+      <li><a href="https://github.com/aep-dev/aep.dev/blob/master/aep/general/0002">View source</a></li>
+      <li><a href="https://github.com/aep-dev/aep.dev/edit/master/aep/general/0002">Edit this page</a></li>
+    </ul>
+  </section>
+</aside>
+<section id="aep-main" class="docs-component-main">
+  <section class="section-breadcrumbs">
+  <nav
+    class="glue-breadcrumbs glue-mod-mt-std glue-mod-mb-std"
+    aria-label="You are here."
+  >
+    <ol class="glue-breadcrumbs__list aep-breadcrumbs">
+      <li class="glue-breadcrumbs__item" aria-level="1">
+        <a class="glue-breadcrumbs__link" href="/">
+          API Enhancement Proposals
+        </a>
+      </li>
+      
+      <li class="glue-breadcrumbs__item" aria-level="2">
+        <a class="glue-breadcrumbs__link" href="/general">
+          General AEPs
+        </a>
+      </li>
+      
+      <li class="glue-breadcrumbs__item glue-breadcrumbs__item--active"
+          aria-level="3">
+        AEP Numbering and Organization
+      </li>
+    </ol>
+  </nav>
+</section>
+  
+  <h4 class="aep-id">numbering (AEP-2)</h4>
+  <h1 id="aep-numbering-and-organization">AEP Numbering and Organization</h1>
+<p>This document describes the numbering system and general organization of AEPs.</p>
+<p>AEP numbers:</p>
+<ul>
+<li>Are unique. No two AEPs share the same number.</li>
+<li>Indicate the order in which they are authored.</li>
+</ul>
+<p>To help with organization and discovery, AEPs also have a category and a slug
+to easily discovery and refer to the AEP.</p>
+<p>See below for an example of an AEP id, category, and slug, expressed via YAML
+front-matter:</p>
+<div class="highlight language-yaml"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11</span><span class="w"></span>
+<span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;resources&#39;</span><span class="w"></span>
+<span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;create&#39;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="aep-numbers">AEP Numbers</h2>
+<h3 id="core-aeps">Core AEPs</h3>
+<p>To uniquely identify an AEP, each one is assigned a permanent number as it is
+merged.</p>
+<ul>
+<li>A merged AEP <strong>must</strong> use the next available number.</li>
+<li>AEPs <strong>must</strong> be numbered between 1 and 9999.</li>
+</ul>
+<h3 id="organization-specific-aeps">Organization-specific AEPs</h3>
+<ul>
+<li>Organizations <strong>may</strong> extend the AEPs with guidance that is relevant to them.</li>
+<li>Organization-specific AEPs <strong>must</strong> use AEP numbers 10000 or greater.</li>
+</ul>
+<h2 id="aep-categories">AEP Categories</h2>
+<p>To help with discovery of an AEP, each one is assigned a category: a string
+that describes a theme or grouping the AEP belongs in.</p>
+<ul>
+<li>The category of an AEP <strong>may</strong> change over time.</li>
+</ul>
+<p>As an example, the guidance around custom methods may grow to multiple AEPs. As
+such, AEPS may create a new category "custom-methods" and recategorize relevant
+AEPs (mutating custom methods, retrieval custom methods) under it.</p>
+<p>Categories are expressed in the YAML front-matter of an AEP:</p>
+<div class="highlight language-yaml"><pre><span></span><code><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;custom-methods&#39;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="aep-slugs">AEP Slugs</h2>
+<p>Each AEP is given a slug: a string by which it can be easily referenced and
+accessible via an URL on the aep.dev site.</p>
+<ul>
+<li>The slug of an AEP <strong>may</strong> change over time, sometimes to refer to a new
+  revision of an existing AEP.</li>
+<li>On the AEP site, the AEP is then available by with a path of the slug:
+  <code>/{slug}</code>.</li>
+</ul>
+<p>For example, an <a href="/123">AEP-123</a> may author guidance around a design pattern for
+revisions of resources, and be given the slug "revisions". If a new <a href="/1340">AEP-1340</a>
+that provides a significant change is authored, then it may be use the slug
+"revisions", with <a href="/123">AEP-123</a> given a slug like "revisions-deprecated".</p>
+<p>Slugs are expressed in the YAML front-matter of an AEP:</p>
+<div class="highlight language-yaml"><pre><span></span><code><span class="nt">slug</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;create&#39;</span><span class="w"></span>
+</code></pre></div>
+<p>And is available via the path "/create" on the site hosting aep.dev.</p>
+<h2 id="rationale">Rationale</h2>
+<h3 id="why-aep-slugs">Why AEP Slugs</h3>
+<p>In the original aip.dev project, numbers were the primary identifier for an
+AEP. However, as a number does not hint to its purpose or the guidance it
+contains, conversations around AIPs were difficult to hold and often the AIPs
+were be referred to by an unofficial colloquial name rather than by its number.</p>
+<p>As such, AEPs provide the ability for a semantic slug.</p>
+<h3 id="why-aep-categories">Why AEP Categories</h3>
+<p>With aip.dev, numbers were an organizational scheme, with AIPs sorted by number
+in navigation. Using numbers resulted in difficulties putting a new AEP
+alongside related AEPs if a number was not available.</p>
+<p>By adding categories, new AEPs can easily be organized, as well as produce more
+granular categories as the need arises.</p>
+<h3 id="why-organization-specific-aeps">Why Organization-specific AEPs</h3>
+<p>Similar to <a href="google.aip.dev">google.aip.dev</a>, the organizations supporting the
+AEP project found the need for providing organization-specific guidance that is
+a superset of the open specification. By allocating a specific range,
+organizations may safely extend the AEPs without concern of conflicting AEP
+numbers.</p>
+  <footer>
+  Except as otherwise noted, the content of this page is licensed under the
+  <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+  Attribution 4.0 License</a>, and code samples are licensed under the
+  <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.
+  <span class="no-print">For details, see <a href="/licensing">content
+  licensing</a>.</span>
+</footer>
+</section>
+
+        </section>
+      </main>
+      
+    </div>
+    <script src="//www.gstatic.com/external_hosted/hammerjs/v2_0_2/hammer.min.js"></script>
+    <script src="//www.gstatic.com/glue/v22_1/glue-vanilla.min.js"></script>
+    <script type="text/javascript">
+      const headerElement = document.querySelector('.glue-header');
+      if (headerElement) {
+        new window.glue.ui.header.Header(headerElement);
+      }
+    </script>
+  </body>
+</html>
