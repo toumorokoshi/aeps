@@ -1,7 +1,7 @@
 # API Enhancement Proposals
 
-The [AEP Project](https://aep.dev) is an API design specification and ecosystem of
-clients and tooling for protobuf and HTTP REST APIs.
+The [AEP Project](https://aep.dev) is an API design specification and ecosystem
+of clients and tooling for protobuf and HTTP REST APIs.
 
 ## Overview
 
