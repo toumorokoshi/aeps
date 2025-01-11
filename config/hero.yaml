@@ -21,9 +21,8 @@ shortcuts:
       text: Contribute to the project
   - title: Want to adopt AEPs in your organization?
     description: |
-      AEPs were adapted from [Google's AIP project](https://google.aip.dev/), but also extend it with
-      tooling to easily generate and validate that result in better designed APIs, as well as provide clients to 
-      consume them.
+      AEPs were adapted from [Google's AIP project](https://google.aip.dev/), but also enhanced with improved
+      guidance for APIs, tooling to generate and validate them, and clients to interact with them. The result is better designed and consumable APIs.
     button:
       href: /adopting
       text: Learn more
