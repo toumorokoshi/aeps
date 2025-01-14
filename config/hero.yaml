@@ -25,7 +25,7 @@ shortcuts:
       interact with them. Learn more about how the tools fit in to a development
       workflow.
     button:
-      href: /general/tooling-and-ecosystem
+      href: /tooling-and-ecosystem
       text: View ecosystem
   - title: Want to adopt AEPs in your organization?
     description: |
