@@ -1,12 +1,13 @@
 {
-  'openapi': '3.1.0',
-  'servers': [{ 'url': 'http://localhost:8081' }],
   'info':
     {
       'title': 'bookstore.example.com',
       'description': 'An API for bookstore.example.com',
       'version': 'version not set',
+      'contact': { 'name': 'API support', 'email': 'aepsupport@aep.dev' },
     },
+  'openapi': '3.1.0',
+  'servers': [{ 'url': 'http://localhost:8081' }],
   'paths':
     {
       '/isbns':
@@ -61,6 +62,14 @@
             {
               'description': 'Create method for isbn',
               'operationId': 'CreateIsbn',
+              'parameters':
+                [
+                  {
+                    'name': 'id',
+                    'in': 'query',
+                    'schema': { 'type': 'string' },
+                  },
+                ],
               'responses':
                 {
                   '200':
@@ -137,6 +146,16 @@
                     'in': 'query',
                     'schema': { 'type': 'string' },
                   },
+                  {
+                    'name': 'skip',
+                    'in': 'query',
+                    'schema': { 'type': 'integer' },
+                  },
+                  {
+                    'name': 'filter',
+                    'in': 'query',
+                    'schema': { 'type': 'string' },
+                  },
                 ],
               'responses':
                 {
@@ -171,6 +190,14 @@
             {
               'description': 'Create method for publisher',
               'operationId': 'CreatePublisher',
+              'parameters':
+                [
+                  {
+                    'name': 'id',
+                    'in': 'query',
+                    'schema': { 'type': 'string' },
+                  },
+                ],
               'responses':
                 {
                   '200':
@@ -251,7 +278,7 @@
                       'description': 'Successful response',
                       'content':
                         {
-                          'application/json':
+                          'application/merge-patch+json':
                             {
                               'schema':
                                 { '$ref': '#/components/schemas/publisher' },
@@ -263,7 +290,7 @@
                 {
                   'content':
                     {
-                      'application/json':
+                      'application/merge-patch+json':
                         {
                           'schema':
                             { '$ref': '#/components/schemas/publisher' },
@@ -412,6 +439,11 @@
                     'required': true,
                     'schema': { 'type': 'string' },
                   },
+                  {
+                    'name': 'id',
+                    'in': 'query',
+                    'schema': { 'type': 'string' },
+                  },
                 ],
               'responses':
                 {
@@ -502,7 +534,7 @@
                       'description': 'Successful response',
                       'content':
                         {
-                          'application/json':
+                          'application/merge-patch+json':
                             {
                               'schema':
                                 { '$ref': '#/components/schemas/book' },
@@ -514,7 +546,7 @@
                 {
                   'content':
                     {
-                      'application/json':
+                      'application/merge-patch+json':
                         { 'schema': { '$ref': '#/components/schemas/book' } },
                     },
                   'required': true,
@@ -676,6 +708,11 @@
                     'required': true,
                     'schema': { 'type': 'string' },
                   },
+                  {
+                    'name': 'id',
+                    'in': 'query',
+                    'schema': { 'type': 'string' },
+                  },
                 ],
               'responses':
                 {
@@ -819,14 +856,20 @@
                           'application/json':
                             {
                               'schema':
-                                { '$ref': '#/components/schemas/book' },
+                                {
+                                  'type': 'object',
+                                  'properties':
+                                    { 'success': { 'type': 'boolean' } },
+                                  'x-aep-field-numbers': { '0': 'success' },
+                                },
                             },
                         },
                     },
                 },
               'requestBody':
                 {
-                  'content': { 'application/json': { 'schema': {} } },
+                  'content':
+                    { 'application/json': { 'schema': { 'type': 'object' } } },
                   'required': true,
                 },
             },
