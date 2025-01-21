@@ -1,12 +1,13 @@
 {
-  'openapi': '3.1.0',
-  'servers': [{ 'url': 'http://localhost:8081' }],
   'info':
     {
       'title': 'bookstore.example.com',
       'description': 'An API for bookstore.example.com',
       'version': 'version not set',
+      'contact': { 'name': 'API support', 'email': 'aepsupport@aep.dev' },
     },
+  'openapi': '3.1.0',
+  'servers': [{ 'url': 'http://localhost:8081' }],
   'paths':
     {
       '/isbns':
