@@ -35,16 +35,17 @@ guarantees it will change if the resource changes.
 
 ### Condition headers
 
-Services that provide ETags **should** support all applicable
+When adding precondition checking to an API, the headers and behaviors **must**
+match
 [preconditions](https://www.rfc-editor.org/rfc/rfc9110.html#name-preconditions)
-documented in RFC 9110, including:
+as documented in RFC 9110.
 
-- `If-match`
-- `If-None-Match`
-- `If-Modified-Since`
-- `If-Unmodified-Since`
+### If-Match / If-None-Match
 
-An example of using `If-match`:
+Services that provide ETags **should** support the `If-Match` and
+`If-None-Match` headers.
+
+An example of using `If-Match`:
 
 ```http
 GET /v1/publishers/{publisher}/books/{book} HTTP/2
