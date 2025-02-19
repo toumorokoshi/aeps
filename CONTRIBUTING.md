@@ -79,5 +79,6 @@ for the specific file.
 Run the following to format the repository:
 
 ```bash
-prettier -w .
+# nodejs must be installed.
+npx prettier -w .
 ```
