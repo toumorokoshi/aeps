@@ -69,3 +69,15 @@ Specifically, the following files are copied over:
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | [./aep/general/example.oas.yaml](./aep/general/example.oas.yaml) | [example/bookstore/v1/bookstore_openapi.json](https://github.com/aep-dev/aepc/blob/main/example/bookstore/v1/bookstore_openapi.json) |
 | [./aep/general/example.proto](./aep/general/example.proto)       | [example/bookstore/v1/bookstore.proto](https://github.com/aep-dev/aepc/blob/main/example/bookstore/v1/bookstore.proto)               |
+
+### Formatting
+
+This repository uses [prettier](https://prettier.io/). Please check the
+[lint.yaml](https://github.com/aep-dev/aeps/blob/main/.github/workflows/lint.yaml)
+for the specific file.
+
+Run the following to format the repository:
+
+```bash
+prettier -w .
+```
