@@ -119,11 +119,11 @@ result being a resource.
 
 {% tab proto %}
 
-{% sample '../example.proto', 'message ListBooksRequest' %}
+{% sample '../example.proto', 'message ListBooksResponse' %}
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.get.parameters' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.get.responses.200' %}
 
 - The field "results" **must** be an array of resources, with the schema as a
   reference to the resource (e.g. `#/components/schemas/Book`).
