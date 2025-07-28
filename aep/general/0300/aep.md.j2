@@ -1,0 +1,98 @@
+# AEP Editions
+
+This AEP describes how the AEP specification is versioned.
+
+## Edition based versioning
+
+AEPs will be published in editions, similar but not identical to specifications
+such as those for the C++ or Rust programming language:
+
+- The specification will not change for a non-preview edition after it is
+  published.
+- The naming of the edition will be based on the year in which it is published
+  (e.g. aep-2025).
+- Upon publishing a non-preview edition, the current prevision will be removed,
+  and the next preview edition will be created (e.g. aep-2027-preview). This
+  preview edition will accumulate changes until the next edition is published.
+- AEP editions **MAY** have patch version updates which adhere to semantic
+  versioning (e.g. aep-2025.25).
+  - The patch version will only contain fixes to typos and clarification on
+    existing guidance.
+- Editions will be published every 2 years.
+
+## Breaking changes between editions
+
+Although not strictly related to versioning, the AEP specification will
+generally strive to minimize breaking changes, even across editions.
+
+## First-party clients and tooling
+
+_NOTE_: This proposal only applies to AEP first-party clients. Third party open
+source projects or organizations are governed outside of this project, and may
+have their own guarantees.
+
+### Client versioning
+
+- Clients _SHOULD_ adhere to [Semantic Versioning 2.0.0](https://semver.org/)
+
+### Client and edition compatibilty
+
+The newest major version of clients and tools **MUST** be compatible with, at
+minimum, the 3 latest non-preview AEP editions.
+
+The following guidance applies to the most recent major versions of clients:
+
+- Clients may provide different support guarantees for older major versions.
+- Each major version will state what AEP editions are supported by those
+  clients.
+- This guidance does not apply to accepting PRs on older major versions: those
+  may be accepted for any maintained branch of the project, at the discretion
+  of the client maintainers.
+- Clients and tools may support features in preview editions, but support for
+  preview edition features in all clients and tools are not guaranteed.
+
+## Examples of AEP specification changes
+
+The following are examples of specification changes:
+
+- renaming a field (e.g. name to path syntax)
+- changing the syntax for a filter or query language
+- updating versioning guidance
+- adding a new standard method
+- removing guidance
+- updating a design pattern (e.g. singletons or revisions)
+
+## Rationale
+
+### Why an edition-based scheme
+
+The AEPs have two goals that are difficult to achieve in concert:
+
+1. Providing a set of modern best practices for remote APIs.
+2. Providing a stable ecosystem of tooling that organizations can adopt for
+   their use.
+
+This is due to the need to constantly evolve the best practices, which may
+contradict older best practices and therefore result in a breaking change.
+These breaking changes can be difficult for both services producing these APIs
+to adopt, as well as complicate clients with multiple different code paths to
+handle these different versions of clients.
+
+An edition-based system will help provide clear expectations around the cadence
+in which breaking changes could be introduced, as well as act as an anchor on
+which other durations could be based (for example, support for a number of
+editions in major versions of clients).
+
+### Why clients are versioned separately
+
+Although clients are expected to support recent AEP editions and could have a
+similar versioning scheme, clients may also need to introduce breaking changes
+for a variety of reasons unrelated to a new AEP edition, including:
+
+1. An interface change in the client itself.
+2. A change to support a new integration or interface (for example, supporting
+   a new version of the Terraform SDK, or a major version of the MCP server
+   protocol).
+
+This necessitates the ability to express these changes to consumers. As such,
+decoupling the client version from the AEP editions is a critical requirement.
