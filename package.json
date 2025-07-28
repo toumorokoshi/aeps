@@ -3,5 +3,8 @@
   "private": true,
   "devDependencies": {
     "prettier": "3.5.1"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.54.1"
   }
 }
