@@ -43,10 +43,10 @@ While the client tooling for an AEP-compliant compatible API includes:
 flowchart LR
     http["AEP-compliant REST API and OpenAPI definition"]
     http --> cli([<a href="https://github.com/aep-dev/aepcli">aepcli: a command-line interface for AEP-compliant APIs</a>])
-    http --> terraform_generator(["terraform provider generator (planned)"])
-    terraform_generator --> terraform{{"terraform provider"}}
-    http --> llm[/"LLM plugin (external integration)"/]
-    http --> ui([<a href="https://github.com/aep-dev/aep-explorer">aep-explorer: interactive web UI to create, edit, list, and modify resources])
+    http --> terraform_generator([<a href="https://github.com/aep-dev/terraform-provider-aep">terraform-provider-aep</a>])
+    terraform_generator --> terraform{{"terraform provider for an AEP-compliant API"}}
+    http --> mcp([<a href="https://github.com/aep-dev/aep-mcp-server">MCP server, for integrations with LLMs</a>])
+    http --> ui([<a href="https://github.com/aep-dev/aep-explorer">aep-explorer: interactive web UI to create, edit, list, and modify resources</a>])
     http --> sdks[/"Language-specific libraries (e.g. via openapi-generator)"/]
     http --> asset_inventory[/"Asset inventory and policy management tooling (external integration)"/]
     http --> crd_generator(["Kubernetes Custom Resource Definitions generator"])
