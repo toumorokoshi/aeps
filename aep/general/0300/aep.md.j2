@@ -2,16 +2,16 @@
 
 This AEP describes how the AEP specification is versioned.
 
-## Edition based versioning
+## Edition-based versioning
 
 AEPs will be published in editions, similar but not identical to specifications
-such as those for the C++ or Rust programming language:
+such as those for the C++ or Rust programming languages:
 
 - The specification will not change for a non-preview edition after it is
   published.
 - The naming of the edition will be based on the year in which it is published
-  (e.g. aep-2025).
-- Upon publishing a non-preview edition, the current prevision will be removed,
+  (e.g. `aep-2025`).
+- Upon publishing a non-preview edition, the current preview edition will be removed,
   and the next preview edition will be created (e.g. aep-2027-preview). This
   preview edition will accumulate changes until the next edition is published.
 - AEP editions **MAY** have patch version updates which adhere to semantic
@@ -43,24 +43,25 @@ minimum, the 3 latest non-preview AEP editions.
 The following guidance applies to the most recent major versions of clients:
 
 - Clients may provide different support guarantees for older major versions.
-- Each major version will state what AEP editions are supported by those
+- Each major version will state which AEP editions are supported by those
   clients.
 - This guidance does not apply to accepting PRs on older major versions: those
   may be accepted for any maintained branch of the project, at the discretion
   of the client maintainers.
 - Clients and tools may support features in preview editions, but support for
-  preview edition features in all clients and tools are not guaranteed.
+  preview edition features in all clients and tools is not guaranteed.
 
 ## Examples of AEP specification changes
 
 The following are examples of specification changes:
 
-- renaming a field (e.g. name to path syntax)
+- renaming a field (e.g. `name` to `path`)
 - changing the syntax for a filter or query language
 - updating versioning guidance
 - adding a new standard method
 - removing guidance
 - updating a design pattern (e.g. singletons or revisions)
+- adding a new design pattern
 
 ## Rationale
 
