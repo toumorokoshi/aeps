@@ -7,15 +7,16 @@ This AEP describes how the AEP specification is versioned.
 AEPs will be published in editions, similar but not identical to specifications
 such as those for the C++ or Rust programming languages:
 
-- The specification will not change for a non-preview edition after it is
-  published.
-- The naming of the edition will be based on the year in which it is published
-  (e.g. `aep-2025`).
-- Upon publishing a non-preview edition, the current preview edition will be removed,
-  and the next preview edition will be created (e.g. aep-2027-preview). This
-  preview edition will accumulate changes until it is promoted to stable.
+- There are two types of editions: "stable" editions which do not change, and
+  "preview" editions which represent any edition not yet stablized.
+- The naming of a stable edition will be based on the year in which it is
+  published (e.g. `aep-2025`).
+- The specification will not change for a stable edition after it is published.
+- Upon promoting a preview edition to a stable edition, the next preview
+  edition will be created (e.g. `aep-2027-preview`). This preview edition will
+  accumulate changes until it is promoted.
 - AEP editions **MAY** have patch version updates which adhere to semantic
-  versioning (e.g. aep-2025.25).
+  versioning (e.g. `aep-2025.25`).
   - The patch version will only contain fixes to typos and clarification on
     existing guidance.
 - Editions will be published every 2 years.
@@ -38,7 +39,7 @@ have their own guarantees.
 ### Client and edition compatibilty
 
 The newest major version of clients and tools **MUST** be compatible with, at
-minimum, the 3 latest non-preview AEP editions.
+minimum, the 3 latest stable AEP editions.
 
 The following guidance applies to the most recent major versions of clients:
 
@@ -67,20 +68,21 @@ The following are examples of specification changes:
 
 ### Editions and breaking changes
 
-After enumerating all the possible types of changes to the specification, it was
-determined that, to either some API publisher or client, any change to the
+After enumerating all the possible types of changes to the specification, it
+was determined that, to either some API publisher or client, any change to the
 specification would be breaking some use case.
 
-Some cases, such as renaming a standard field, were straightforward. Others, like
-adding a new design pattern, could conflict with the design of an existing API,
-therefore possibly invalidating the API compatibility with a specification.
+Some cases, such as renaming a standard field, were straightforward. Others,
+like adding a new design pattern, could conflict with the design of an existing
+API, therefore possibly invalidating the API compatibility with a
+specification.
 
 Removing guidance could also result in breaking a client which relied upon that
-guidance existing (for example, an API that may treat revisions as a first-class
-concept for rollback, aliasing, and rolling forward).
+guidance existing (for example, an API that may treat revisions as a
+first-class concept for rollback, aliasing, and rolling forward).
 
-Therefore, rather than attempt to scope the breaking changes, all changes of any
-kind are left until the next edition.
+Therefore, rather than attempt to scope the breaking changes, all changes of
+any kind are left until the next edition.
 
 ### Why an edition-based scheme
 
