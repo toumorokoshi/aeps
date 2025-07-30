@@ -17,14 +17,26 @@ such as those for the C++ or Rust programming languages:
   accumulate changes until it is promoted.
 - AEP editions **MAY** have patch version updates which adhere to semantic
   versioning (e.g. `aep-2025.25`).
-  - The patch version will only contain fixes to typos in, and clarification on,
-    existing guidance.
+  - The patch version will not make any [breaking changes](#breaking-changes).
+    For example, fixing typos or clarifying existing guidance.
+  - The patch version will only contain fixes to typos in, and clarification
+    on, existing guidance.
 - Editions will be published every 2 years.
 
 ## Breaking changes
 
-Although not strictly related to versioning, the AEP specification will
-generally strive to minimize breaking changes, even across editions.
+A break change is considered a change to the specification that would result in
+one of the following:
+
+- A change which could cause a previously compliant API to become
+  non-compliant.
+- A change which would break client functionality that was leveraging guidance
+  explicitly stated in the specification.
+
+A new AEP edition **may** have breaking changes.
+
+The AEP specification will generally strive to minimize breaking changes, even
+across editions.
 
 ## First-party clients and tooling
 
