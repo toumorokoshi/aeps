@@ -1,7 +1,7 @@
 # List
 
 In REST APIs, it is customary to make a `GET` request to a resource
-collection's URI (for example, `/publishers/{publisher}/books`) in order to
+collection's URI (for example, `/publishers/{publisher_id}/books`) in order to
 retrieve a list of the resources within that collection.
 
 Resource-oriented design (AEP-121) honors this pattern through the `List`
@@ -43,7 +43,7 @@ result **must** be a list of resources.
 {% tab oas %}
 
 ```http
-GET /v1/publishers/{publisher}/books HTTP/2
+GET /v1/publishers/{publisher_id}/books HTTP/2
 Host: bookstore.example.com
 Accept: application/json
 ```
@@ -89,7 +89,7 @@ when the REST/JSON interface is used.
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.get.parameters' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books.get.parameters' %}
 
 {% endtabs %}
 
@@ -123,7 +123,7 @@ result being a resource.
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.get.responses.200' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books.get.responses.200' %}
 
 - The field "results" **must** be an array of resources, with the schema as a
   reference to the resource (e.g. `#/components/schemas/Book`).
@@ -213,7 +213,7 @@ soft-deleted resources to be included.
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.get' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books.get' %}
 
 {% endtabs %}
 

@@ -47,7 +47,7 @@ apply consistently:
 {% tab oas %}
 
 ```http
-POST /v1/publishers/{publisher}/book/{book}:archive HTTP/2
+POST /v1/publishers/{publisher_id}/books/{book_id}:archive HTTP/2
 Host: bookstore.example.com
 Accept: application/json
 ```
@@ -72,7 +72,7 @@ such:
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books/{book}:archive' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books/{book_id}:archive' %}
 
 {% endtabs %}
 

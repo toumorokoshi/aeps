@@ -135,8 +135,8 @@ If specific IDs are reserved, services **must** document those IDs.
 
 - If a `latest` ID exists, it **must** represent the most recently created
   revision. The content of
-  `publishers/{publisher}/books/{book}/revisions/latest` and
-  `publishers/{publisher}/books/{book}` can differ, as the latest revision may
+  `publishers/{publisher_id}/books/{book_id}/revisions/latest` and
+  `publishers/{publisher_id}/books/{book_id}` can differ, as the latest revision may
   be different from the current state of the resource.
 
 ### User-specified aliases
@@ -177,7 +177,7 @@ message AliasBookRevisionRequest {
 ```json
 {
   "paths": {
-    "/v1/publishers/{publisher_id}/books/{book}/revisions/{revision}:alias": {
+    "/v1/publishers/{publisher_id}/books/{book_id}/revisions/{revision}:alias": {
       "post": {
         "requestBody": {
           "content": {
@@ -269,7 +269,7 @@ message RollbackBookRequest {
 ```json
 {
   "paths": {
-    "/v1/publishers/{publisher}/books/{book}/revisions/{revision}:rollback": {
+    "/v1/publishers/{publisher_id}/books/{book_id}/revisions/{revision}:rollback": {
       "post": {
         "requestBody": {
           "content": {

@@ -1,7 +1,7 @@
 # Get
 
 In REST APIs, it is customary to make a `GET` request to a resource's URI (for
-example, `/v1/publishers/{publisher}/books/{book}`) in order to retrieve that
+example, `/v1/publishers/{publisher_id}/books/{book_id}`) in order to retrieve that
 resource.
 
 Resource-oriented design (AEP-121) honors this pattern through the `Get`
@@ -44,7 +44,7 @@ resource.
 URI:
 
 ```http
-GET /v1/publishers/{publisher}/books/{book} HTTP/2
+GET /v1/publishers/{publisher_id}/books/{book_id} HTTP/2
 Host: bookstore.example.com
 Accept: application/json
 ```
@@ -80,7 +80,7 @@ REST/JSON interface is used.
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books/{book}.get.parameters' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books/{book_id}.get.parameters' %}
 
 - The HTTP method **must** be `GET`.
   - The request **must** be safe and **must not** have side effects.
@@ -104,7 +104,7 @@ there is a reason to return a partial response (see AEP-157).
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books/{book}.get.responses.200.content' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books/{book_id}.get.responses.200.content' %}
 
 - The response content **must** be the resource itself. For example:
   `#/components/schemas/Book`. The response **must** reference a schema with a
@@ -139,6 +139,6 @@ exist, the service **must** reply with an HTTP 404 error.
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books/{book}.get' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books/{book_id}.get' %}
 
 {% endtabs %}

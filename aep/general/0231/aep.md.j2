@@ -51,7 +51,7 @@ rpc BatchGetBooks(BatchGetBooksRequest) returns (BatchGetBooksResponse) {
 
 message BatchGetBooksRequest {
   // The parent resource shared by all books being retrieved.
-  // Format: publishers/{publisher}
+  // Format: publishers/{publisher_id}
   // If this is set, the parent of all of the books specified in `paths`
   // must match this field.
   string parent = 1 [
@@ -61,7 +61,7 @@ message BatchGetBooksRequest {
 
   // The paths of the books to retrieve.
   // A maximum of 1000 books can be retrieved in a batch.
-  // Format: publishers/{publisher}/books/{book}
+  // Format: publishers/{publisher_id}/books/{book_id}
   repeated string paths = 2 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
