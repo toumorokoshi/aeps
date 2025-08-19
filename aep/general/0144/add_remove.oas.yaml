@@ -4,7 +4,7 @@ info:
   title: Library
   version: 1.0.0
 paths:
-  "/publishers/{publisherId}/books/{bookId}:addAuthor":
+  '/publishers/{publisherId}/books/{bookId}:addAuthor':
     post:
       operationId: addAuthor
       description: Add an author to a book.
@@ -24,8 +24,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Book"
-  "/publishers/{publisherId}/books/{bookId}:removeAuthor":
+                $ref: '#/components/schemas/Book'
+  '/publishers/{publisherId}/books/{bookId}:removeAuthor':
     post:
       operationId: removeAuthor
       description: Remove an author from a book.
@@ -45,7 +45,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Book"
+                $ref: '#/components/schemas/Book'
 components:
   schema:
     Book:

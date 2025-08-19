@@ -27,7 +27,7 @@ paths:
             items:
               type: string
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
@@ -38,8 +38,8 @@ paths:
                     type: array
                     items:
                       oneOf:
-                        - $ref: "#/components/schemas/Book"
-                        - $ref: "#/components/schemas/Error"
+                        - $ref: '#/components/schemas/Book'
+                        - $ref: '#/components/schemas/Error'
 components:
   schemas:
     Book:
