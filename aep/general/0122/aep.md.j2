@@ -100,7 +100,7 @@ In this situation, the _message_ is still called `UserEvent` or
 **Note:** APIs wishing to do this **must** follow this format consistently
 throughout the API, or else not at all.
 
-### Resource ID segments
+### Resource ID
 
 A resource ID segment identifies the resource within its parent collection. In
 the resource path `publishers/123/books/les-miserables`, `123` is the resource
@@ -198,11 +198,11 @@ annotation declaring the type (see [AEP-4][aep-4] for more on this).
 message Book {
 option (google.api.resource) = {
   type: "apis.example.com/library/Book"
-  pattern: "publishers/{publisher}/books/{book}"
+  pattern: "publishers/{publisher_id}/books/{book_id}"
 };
 
 // The resource path of the book.
-// Format: publishers/{publisher}/books/{book}
+// Format: publishers/{publisher_id}/books/{book_id}
 string path = 1;
 
 // Other fields...
@@ -220,7 +220,7 @@ resource type ([AEP-4][aep-4]).
 // Request message for ArchiveBook
 message ArchiveBookRequest {
 // The book to archive.
-// Format: publishers/{publisher}/books/{book}
+// Format: publishers/{publisher_id}/books/{book_id}
 string path = 1 [
   (google.api.field_behavior) = REQUIRED,
   (google.api.resource_reference) = {
@@ -300,11 +300,11 @@ equivalent to the corresponding message's name in snake case.
 message Book {
 option (google.api.resource) = {
   type: "apis.example.com/library/Book"
-  pattern: "publishers/{publisher}/books/{book}"
+  pattern: "publishers/{publisher_id}/books/{book_id}"
 };
 
 // Path of the book.
-// Format is `publishers/{publisher}/books/{book}`
+// Format is `publishers/{publisher_id}/books/{book_id}`
 string path = 1;
 
 // The shelf where the book currently sits.

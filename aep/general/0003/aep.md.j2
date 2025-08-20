@@ -111,6 +111,22 @@ Examples of complexities that declarative clients abstract away include:
 
 [Terraform][] is an example of such a client.
 
+### Resource ID
+
+The unique identifier for a resource, within its parent collection. For
+example, in the following resource path:
+
+```
+/publishers/consistent-house/books/pride-and-prejudice
+```
+
+There are two resource IDs:
+
+- `consistent-house`, which is the id of the publisher.
+- `pride-and-prejudice`, which is the id of the book.
+
+See [paths](/paths#resource-id) for more information.
+
 ### Root collection
 
 A [collection](#collection) that does not have any parent collections. For

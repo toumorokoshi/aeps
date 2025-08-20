@@ -1,7 +1,7 @@
 # Create
 
 In REST APIs, it is customary to make a `POST` request to a collection's URI
-(for example, `/v1/publishers/{publisher}/books`) in order to create a new
+(for example, `/v1/publishers/{publisher_id}/books`) in order to create a new
 resource within that collection.
 
 Resource-oriented design (AEP-121) honors this pattern through the `Create`
@@ -43,7 +43,7 @@ Create methods are specified using the following pattern:
 {% tab oas %}
 
 ```http
-POST /v1/publishers/{publisher}/books?id={book} HTTP/2
+POST /v1/publishers/{publisher_id}/books?id={book} HTTP/2
 Host: bookstore.example.com
 Accept: application/json
 {
@@ -76,7 +76,7 @@ Create methods implement a common request message pattern:
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.post.requestBody' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books.post.requestBody' %}
 
 - The request body **must** be the resource being created.
 
@@ -90,7 +90,7 @@ Create methods implement a common request message pattern:
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.post.responses.200' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books.post.responses.200' %}
 
 - The response **must** be the resource itself. There is no separate response
   schema.
@@ -154,7 +154,7 @@ publishers/012345678-abcd-cdef/books/12341234-5678-abcd
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.post.requestBody' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books.post.requestBody' %}
 
 - The `id` field **must** be a query parameter on the request.
 
@@ -172,7 +172,7 @@ publishers/012345678-abcd-cdef/books/12341234-5678-abcd
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books.post' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books.post' %}
 
 {% endtabs %}
 

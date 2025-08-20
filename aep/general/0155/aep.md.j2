@@ -24,7 +24,7 @@ the same `idempotency_key` more than once.
 ```proto
 message CreateBookRequest {
   // The parent resource where this book will be created.
-  // Format: publishers/{publisher}
+  // Format: publishers/{publisher_id}
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {

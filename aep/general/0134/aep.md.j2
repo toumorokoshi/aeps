@@ -1,8 +1,8 @@
 # Update
 
 In REST APIs, it is customary to make a `PATCH` or `PUT` request to a
-resource's URI (for example, `/v1/publishers/{publisher}/books/{book}`) in
-order to update that resource.
+resource's URI (for example, `/v1/publishers/{publisher_id}/books/{book_id}`)
+in order to update that resource.
 
 Resource-oriented design (AEP-121) honors this pattern through the `Update`
 method (which mirrors the REST `PATCH` behavior). These methods accept the URI
@@ -51,7 +51,7 @@ Update methods are specified using the following pattern:
 {% tab oas %}
 
 ```http
-PATCH /v1/publishers/{publisher}/book/{book} HTTP/2
+PATCH /v1/publishers/{publisher_id}/books/{book_id} HTTP/2
 Host: bookstore.example.com
 Accept: application/merge-patch+json
 {
@@ -222,11 +222,11 @@ In this situation, the resource **should** contain a `string etag` field:
 message Book {
   option (google.api.resource) = {
     type: "library.example.com/Book"
-    pattern: "publishers/{publisher}/books/{book}"
+    pattern: "publishers/{publisher_id}/books/{book_id}"
   };
 
   // The resource path of the book.
-  // Format: publishers/{publisher}/books/{book}
+  // Format: publishers/{publisher_id}/books/{book_id}
   string path = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // The title of the book.
@@ -284,7 +284,7 @@ and omit the rest. APIs that do this **must** document this behavior.
 
 {% tab oas %}
 
-{% sample '../example.oas.yaml', '$.paths./publishers/{publisher}/books/{book}.patch' %}
+{% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books/{book_id}.patch' %}
 
 {% endtabs %}
 
