@@ -15,7 +15,7 @@ paths:
             schema:
               description: Request structure to archive a book.
               properties:
-                mime_type:
+                content_type:
                   type: string
                   description: |
                     The target format for the archived book.

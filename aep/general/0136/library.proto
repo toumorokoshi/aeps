@@ -48,7 +48,7 @@ message ArchiveBookRequest {
 
   // The target format for the archived book.
   // Must be "application/pdf", "application/rtf", or "application/epub+zip"
-  string mime_type = 2;
+  string content_type = 2;
 }
 
 // Response message for archiving a book.
