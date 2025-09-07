@@ -1,6 +1,7 @@
 # pytest
 site/.coverage
 site/.pytest_cache site/htmlcov
+__pycache__
 
 # mypy
 .mypy_cache
