@@ -4,9 +4,8 @@ In REST APIs, it is customary to make a `GET` request to a resource's URI (for
 example, `/v1/publishers/{publisher_id}/books/{book_id}`) in order to retrieve
 that resource.
 
-Resource-oriented design [AEP-121][aep-121] honors this pattern through the
-`Get` method. These RPCs accept the URI representing that resource and return
-the resource.
+Resource-oriented design AEP-121 honors this pattern through the `Get` method.
+These RPCs accept the URI representing that resource and return the resource.
 
 ## Guidance
 
@@ -76,8 +75,6 @@ variable in the `google.api.http` annotation on the RPC. This causes the `path`
 field in the request to be populated based on the value in the URL when the
 REST/JSON interface is used.
 
-[aep-4][aep-4]
-
 {% tab oas %}
 
 {% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books/{book_id}.get.parameters' %}
@@ -142,5 +139,3 @@ exist, the service **must** reply with an HTTP 404 error.
 {% sample '../example.oas.yaml', '$.paths./publishers/{publisher_id}/books/{book_id}.get' %}
 
 {% endtabs %}
-
-[aep-121][aep-121]

@@ -19,13 +19,10 @@ Options:
 """
 
 import argparse
-import os
 import re
 import sys
-import urllib.parse
 from pathlib import Path
-from typing import List, Tuple, Set, Dict
-import requests
+from typing import List, Tuple, Set
 from urllib.parse import urlparse
 
 

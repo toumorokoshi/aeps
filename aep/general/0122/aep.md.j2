@@ -57,7 +57,6 @@ context), and are only required to be unique within that scope. For this
 reason, they are sometimes called _relative resource paths_ to distinguish them
 from _full resource paths_ (discussed below).
 
-[aep-210][aep-210]
 [uri path schema]: https://datatracker.ietf.org/doc/html/rfc3986#appendix-A
 [singleton resources]: https://aep.dev/singletons
 
@@ -129,7 +128,7 @@ ID for the publisher, and `les-miserables` is the resource ID for the book.
 - For more information, see the [create][] standard method.
 
 <!-- prettier-ignore-start -->
-[aep-128][aep-128]
+
 [create]: ./0133.md#user-specified-ids
 [rfc-1034]: https://tools.ietf.org/html/rfc1034
 [JSON Schema keywords]: https://swagger.io/docs/specification/data-models/keywords/
@@ -191,7 +190,7 @@ and the full resource path does not change between these.
 When defining a resource, the first field **should** be the resource path,
 which **must** be of type `string` and **must** be called `path` for the
 resource path. The message **should** include a `google.api.resource`
-annotation declaring the type (see [AEP-4][aep-4] for more on this).
+annotation declaring the type (see AEP-4 for more on this).
 
 ```proto
 // A representation of a book in the library.
@@ -214,7 +213,7 @@ When defining a method that retrieves or acts on an already-existing resource
 **should** be the resource path, which **must** be of type `string` and
 **must** be called `path` for the resource path. The field **should** also be
 annotated with the `google.api.resource_reference` annotation, referencing the
-resource type ([AEP-4][aep-4]).
+resource type (AEP-4).
 
 ```proto
 // Request message for ArchiveBook
@@ -242,7 +241,7 @@ resource to a collection (such as `ListBooks` or `CreateBook`), the first field
 of the request message **should** be of type `string` and **should** be called
 `parent` for the resource path of the collection. The `parent` field **should**
 also be annotated with the `google.api.resource_reference` annotation,
-referencing the parent's resource type ([AEP-4][aep-4]).
+referencing the parent's resource type (AEP-4).
 
 ```proto
 // Request message for ListBooks.
@@ -325,11 +324,9 @@ alone is strictly necessary, the field **should** use an `_id` suffix (e.g.
 
 ## Further reading
 
-- For resource types, see [AEP-4][aep-4].
+- For resource types, see AEP-4.
 
 <!-- prettier-ignore-start -->
 [protovalidate]: https://github.com/bufbuild/protovalidate
 [pattern]: https://json-schema.org/understanding-json-schema/reference/string#regexp
 <!-- prettier-ignore-end -->
-
-[aep-4][aep-4]

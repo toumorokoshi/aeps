@@ -16,5 +16,10 @@ jobs:
         run: npm install .
       - name: verify with prettier.
         run: npx prettier --check .
+  fix:
+    runs-on: ubuntu-latest
+    container: python:3.12
+    steps:
+      - uses: actions/checkout@v3
       - name: verify with fix.py
-        run: python scripts/fix.py --check ./aep/general/
+        run: python scripts/fix.py --check --path ./aep/general/

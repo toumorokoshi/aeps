@@ -4,9 +4,9 @@ In REST APIs, it is customary to make a `DELETE` request to a resource's URI
 (for example, `/v1/publishers/{publisher_id}/books/{book_id}`) in order to
 delete that resource.
 
-Resource-oriented design ([AEP-121][aep-121]) honors this pattern through the
-`Delete` method. This method accepts the URI representing that resource and
-usually returns an empty response.
+Resource-oriented design (AEP-121) honors this pattern through the `Delete`
+method. This method accepts the URI representing that resource and usually
+returns an empty response.
 
 ## Guidance
 
@@ -114,7 +114,7 @@ exist, the service **must** error with `404 Not found` (`NOT_FOUND`).
 ### Soft delete
 
 **Note:** This material was moved into its own document to provide a more
-comprehensive treatment: [AEP-164][aep-164].
+comprehensive treatment: AEP-164.
 
 ### Cascading delete
 
@@ -173,26 +173,25 @@ The API **must** fail with a `409 Conflict` error if the `force` field is
 
 ## Further reading
 
-- For soft delete and undelete, see [AEP-164][aep-164].
-- For bulk deleting large numbers of resources based on a filter, see
-  [AEP-165][aep-165].
+- For soft delete and undelete, see AEP-164.
+- For bulk deleting large numbers of resources based on a filter, see AEP-165.
 
 ## Changelog
 
 - **2024-02-11**: Imported from https://google.aip.dev/135
 
 <!-- prettier-ignore-start -->
-[aep-4][aep-4]
-[aep-128][aep-128]
-[aep-131][aep-131]
-[aep-132][aep-132]
-[aep-136][aep-136]
-[aep-154][aep-154]
-[aep-164][aep-164]
-[aep-165][aep-165]
-[aep-203][aep-203]
-[aep-214][aep-214]
-[aep-216][aep-216]
+
+
+
+
+
+
+
+
+
+
+
 [strong consistency]: ./0121.md#strong-consistency
 [etag]: ./0134.md#etags
 [RFC 9110]: https://www.rfc-editor.org/rfc/rfc9110.html#name-delete

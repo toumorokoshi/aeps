@@ -4,9 +4,9 @@ In REST APIs, it is customary to make a `GET` request to a resource
 collection's URI (for example, `/publishers/{publisher_id}/books`) in order to
 retrieve a list of the resources within that collection.
 
-Resource-oriented design [AEP-121][aep-121] honors this pattern through the
-`List` method. These RPCs accept a parent collection (if one exists), and
-return a list of responses matching that input.
+Resource-oriented design AEP-121 honors this pattern through the `List` method.
+These RPCs accept a parent collection (if one exists), and return a list of
+responses matching that input.
 
 ## Guidance
 
@@ -164,10 +164,10 @@ to specify the resources that are returned in a response.
 The following table summarizes the applicable AEPs, ordered by the precedence
 of the operation on the results.
 
-| Operation                      | AEP                               |
-| ------------------------------ | --------------------------------- |
+| Operation                      | AEP                                |
+| ------------------------------ | ---------------------------------- |
 | filter                         | [AEP-160](/0160)                   |
-| ordering (`order_by`)          | [AEP-132](#ordering)              |
+| ordering (`order_by`)          | [AEP-132](#ordering)               |
 | pagination (`next_page_token`) | [AEP-158](/0158)                   |
 | skip                           | [AEP-158](/0158/#skipping-results) |
 
@@ -222,6 +222,6 @@ soft-deleted resources to be included.
 [reading across collections]: ./0159
 [soft-delete]: ./0164
 [resource type]: ./0004
-[aep-121][aep-121]
-[aep-203][aep-203]
+
+
 <!-- prettier-ignore-end -->

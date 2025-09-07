@@ -4,10 +4,10 @@ In REST APIs, it is customary to make a `POST` request to a collection's URI
 (for example, `/v1/publishers/{publisher_id}/books`) in order to create a new
 resource within that collection.
 
-Resource-oriented design [AEP-121][aep-121] honors this pattern through the
-`Create` method. These RPCs accept the parent collection if one exists, and the
-resource to create (and potentially some other parameters), and return the
-created resource.
+Resource-oriented design AEP-121 honors this pattern through the `Create`
+method. These RPCs accept the parent collection if one exists, and the resource
+to create (and potentially some other parameters), and return the created
+resource.
 
 ## Guidance
 
@@ -195,12 +195,6 @@ the ID of the newly-created resource.
 Having a user-specified ID also means the client can precalculate the resource
 path and use it in references from other resources.
 
-[aep-121][aep-121]
-[aep-122][aep-122]
-[aep-4][aep-4]
-[aep-155][aep-155]
-[aep-203][aep-203]
-[aep-210][aep-210]
 [data plane]: ./0111.md#data-plane
 [errors]: ./0193
 [field_behavior]: ./0203
