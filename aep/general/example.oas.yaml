@@ -22,6 +22,7 @@ components:
           description:
             The server-assigned path of the resource, which is unique within
             the service.
+          readOnly: true
           type: string
         price:
           format: int32
@@ -50,6 +51,7 @@ components:
           description:
             The server-assigned path of the resource, which is unique within
             the service.
+          readOnly: true
           type: string
       required:
         - display_name
@@ -68,6 +70,7 @@ components:
           description:
             The server-assigned path of the resource, which is unique within
             the service.
+          readOnly: true
           type: string
       type: object
       x-aep-resource:
@@ -86,6 +89,7 @@ components:
           description:
             The server-assigned path of the resource, which is unique within
             the service.
+          readOnly: true
           type: string
         price:
           format: double
@@ -111,6 +115,7 @@ components:
           description:
             The server-assigned path of the resource, which is unique within
             the service.
+          readOnly: true
           type: string
       type: object
       x-aep-resource:
@@ -129,6 +134,7 @@ components:
           description:
             The server-assigned path of the resource, which is unique within
             the service.
+          readOnly: true
           type: string
       required:
         - name

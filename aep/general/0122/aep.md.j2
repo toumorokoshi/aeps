@@ -52,9 +52,14 @@ users/vhugo1802
 
 {% sample '../example.proto', 'message Book' %}
 
+- The `path` field for the resource **must** be annotated with `OUTPUT_ONLY`.
+
 {% tab oas %}
 
 {% sample '../example.oas.yaml', '$.components.schemas.book.properties.path' %}
+
+- The `path` field for the resource **must** be annotated with
+  `readOnly: true`.
 
 {% endtabs %}
 
