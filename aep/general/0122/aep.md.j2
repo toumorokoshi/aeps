@@ -194,10 +194,16 @@ and the full resource path does not change between these.
 
 ### Fields representing resource paths
 
-When defining a resource, the first field **should** be the resource path,
-which **must** be of type `string` and **must** be called `path` for the
-resource path. The message **should** include a `aep.api.resource` annotation
-declaring the type (see AEP-4 for more on this).
+When defining a resource, the first field:
+
+- **should** be the resource path,
+  - **must** be of type `string`
+  - **must** be called `path`
+  - **must** be read-only
+- The message **should** include a `aep.api.resource` annotation declaring the
+  type (see AEP-4 for more on this).
+
+{% tab proto %}
 
 ```proto
 // A representation of a book in the library.
@@ -209,7 +215,7 @@ option (aep.api.resource) = {
 
 // The resource path of the book.
 // Format: publishers/{publisher_id}/books/{book_id}
-string path = 1;
+string path = 1 [ (aep.api.field_info) = { field_behavior: [ FIELD_BEHAVIOR_READONLY ] } ];
 
 // Other fields...
 }
@@ -238,7 +244,32 @@ string path = 1 [
 other use cases, either use a different term or prepend an adjective (for
 example: `file_path`).
 
+{% tab oas %}
+
+```yaml
+components:
+  schemas:
+    book:
+      type: object
+      properties:
+        path:
+          type: string
+          description:
+            'The resource path of the book. Format is
+            `publishers/{publisher_id}/books/{book_id}`'
+          readOnly: true
+        shelf:
+          type: string
+          description:
+            'The shelf where the book currently sits. Format is
+            `shelves/{shelf}`'
+```
+
+{% endtabs %}
+
 ### Fields representing a resource's parent
+
+{% tab proto %}
 
 When defining a method that retrieves resources from a collection or adds a new
 resource to a collection (such as `ListBooks` or `CreateBook`), the first field
@@ -278,6 +309,23 @@ string parent = 1 [
 ```
 
 **Note:** Fields **should not** be called `parent` except for this purpose. For
+
+{% tab oas %}
+
+When defining a method that retrieves resources from a collection or adds a new
+resource to a collection (such as `ListBooks` or `CreateBook`), the path of the
+parent resource **must** be a prefix to the path of the collection:
+
+```
+# ListBooks
+GET /v1/publishers/{publisher_id}/books
+
+# CreateBook
+POST /v1/publishers/{publisher_id}/books
+```
+
+{% endtabs %}
+
 other use cases, use a synonymous term if possible.
 
 ### Fields representing another resource
@@ -286,7 +334,7 @@ When referencing a resource path for a different resource:
 
 - The field **must** be of type `string`.
 - The value of the field **must** be one of:
-  - the full resource path.
+  - the full resource path (including the API service hosting the resource).
   - the resource path, only if the referenced resource is also local to the API
     of the current resource.
 - The field name **should** be equivalent to the corresponding message's name
@@ -295,6 +343,9 @@ When referencing a resource path for a different resource:
   `string dusty_book`).
 - Field names **should not** use the `_path` suffix unless the field would be
   ambiguous without it (e.g., `crypto_key_path`)
+
+{% tab proto %}
+
 - In protobuf, fields representing another resource **should** provide the
   `aep.api.field_info` annotation with the resource type being referenced.
 
@@ -317,6 +368,29 @@ string shelf = 2 [(aep.api.field_info) = { resource_reference: [ "apis.example.c
 // Other fields...
 }
 ```
+
+{% tab oas %}
+
+```yaml
+components:
+  schemas:
+    book:
+      type: object
+      properties:
+        path:
+          type: string
+          description:
+            'The resource path of the book. Format is
+            `publishers/{publisher_id}/books/{book_id}`'
+          readOnly: true
+        shelf:
+          type: string
+          description:
+            'The shelf where the book currently sits. Format is
+            `shelves/{shelf}`'
+```
+
+{% endtabs %}
 
 **Note:** When referring to other resources in this way, APIs **should** use
 the resource path to reference resources when possible. If using the ID
