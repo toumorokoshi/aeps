@@ -1,22 +1,33 @@
 #!/usr/bin/env bash
+# build the AEPs
+# For development purposes, it's best to lay out the other aep repositories
+# side by side from the primary AEPs. If so, this script will use the
+# site-generator and api-linter from those sibling directories.
+# Otherwise, it will clone dependencies.
 set -x
 export AEP_LOCATION="${PWD}"
-export SG_DIRECTORY="/tmp/site-generator"
-export AEP_LINTER_LOC="${SG_DIRECTORY}/api-linter"
-export AEP_OPENAPI_LINTER_LOC="${SG_DIRECTORY}/aep-openapi-linter"
-if [ ! -d "${SG_DIRECTORY}" ]; then
-    git clone https://github.com/aep-dev/site-generator.git "${SG_DIRECTORY}"
-fi
 
-if [ ! -d "${AEP_LINTER_LOC}" ]; then
-    git clone https://github.com/aep-dev/api-linter.git "${AEP_LINTER_LOC}"
-fi
+declare -A repos
 
-if [ ! -d "${AEP_OPENAPI_LINTER_LOC}" ]; then
-    git clone https://github.com/aep-dev/aep-openapi-linter.git "${AEP_OPENAPI_LINTER_LOC}"
-fi
+repos=(
+    [site_generator]="site-generator"
+    [api_linter]="api-linter"
+    [aep_openapi_linter]="aep-openapi-linter"
+)
 
-cd "${SG_DIRECTORY}" || exit
+for varName in "${!repos[@]}"; do
+    repoName="${repos[$varName]}"
+    if [ -d ${AEP_LOCATION}/../${repoName} ]; then
+        eval "$varName=${AEP_LOCATION}/../${repoName}"
+    else
+        eval "$varName=/tmp/${repoName}"
+        if [ ! -d "${varName}" ]; then
+            git clone https://github.com/aep-dev/$repoName.git "${!varName}"
+        fi
+    fi
+done
+
+cd "${site_generator}" || exit
 # make rules / website folder
 mkdir -p src/content/docs/tooling/linter/rules
 mkdir -p src/content/docs/tooling/openapi-linter/rules
